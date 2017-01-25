@@ -257,7 +257,7 @@ namespace DatatronTestImageViewer1
 
             //picImageViewer.Image
 
-
+            
             if(getCurrentIndex() < filesArray.Length)
             {
                 IncCurrentIndex(1);
@@ -286,33 +286,51 @@ namespace DatatronTestImageViewer1
         {
 
 
+            changedImageValue();
+           
+    
+        }
+
+
+        public void changedImageValue()
+        {
             try
             {
                 if (txtbxCurrent.Text != "" & getFilesArrayIndex(0) != "")
                 {
-                    int value = Int32.Parse(txtbxCurrent.Text);
 
-                    if (value > 0 && value <= getFilesArray().Length && getFilesArray().Length > 0)
+                    try
                     {
-                        setImage(value - 1);
-               
+                        int value = Int32.Parse(txtbxCurrent.Text);
+                        int index = value - 1;
+
+                        if (value > 0 && value <= getFilesArray().Length && getFilesArray().Length > 0)
+                        {
+                            setImage(index);
+                            setCurrentIndex(index);
+                        }
+                    }
+
+                    catch(FormatException)
+                    {
+
                     }
                 }
 
-
             }
-            catch(NullReferenceException)
+            catch (NullReferenceException)
             {
-
             }
-           
+        }
 
-
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataGridViewer childDataGridViewer = new DataGridViewer();
+            childDataGridViewer.MdiParent = this;
+            childDataGridViewer.Show();
             
-            
-           
-
         }
     }
+
+
 }

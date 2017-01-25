@@ -33,8 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\..\..\..\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +50,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataGridViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataGridViewer.Designer.cs">
+      <DependentUpon>DataGridViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatatronImageViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DTImageViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DTImageViewer.Designer.cs">
+      <DependentUpon>DTImageViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FloatingDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FloatingDialogue.Designer.cs">
+      <DependentUpon>FloatingDialogue.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +79,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DataGridViewer.resx">
+      <DependentUpon>DataGridViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatatronImageViewer.resx">
+      <DependentUpon>DatatronImageViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DTImageViewer.resx">
+      <DependentUpon>DTImageViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -65,6 +99,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,6 +113,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\00000003.TIF" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
