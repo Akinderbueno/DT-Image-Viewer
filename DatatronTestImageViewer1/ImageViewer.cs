@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace DatatronTestImageViewer1
 {
-    public partial class DatatronImageViewer : Form
+    public partial class ImageViewer : Form
     {
-        public DatatronImageViewer()
+        public ImageViewer()
         {
             InitializeComponent();
         }
 
-        private void DatatronImageViewer_Load(object sender, EventArgs e)
+        public void ImageViewer_Load(object sender, EventArgs e)
         {
 
         }
-      
     }
 }

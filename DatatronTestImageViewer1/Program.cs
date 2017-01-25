@@ -16,7 +16,7 @@ namespace DatatronTestImageViewer1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DatatronImageViewer());
+            Application.Run(new DTImageViewer());
         }
     }
 }
