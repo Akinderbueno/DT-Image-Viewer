@@ -28,6 +28,8 @@ namespace DatatronTestImageViewer1
         private int CURRENT_INDEX;
         private string[] filesArray;
         ImageViewer imgV = new ImageViewer();
+        FloatingDialogue flDiag = new FloatingDialogue();
+
         
         
         //---------------------------------------------
@@ -194,18 +196,18 @@ namespace DatatronTestImageViewer1
                     {
                         int value = Int32.Parse(txtbCurrent.Text);
                         int index = value - 1;
-                        MessageBox.Show("test");
+                        
                         if (value > 0 && value <= getFilesArray().Length && getFilesArray().Length > 0)
                         {
                             setImage(index);
                             setCurrentIndex(index);
-                            MessageBox.Show("changed");
+                            
                         }
                     }
 
                     catch (FormatException)
                     {
-                        MessageBox.Show("catch FormatException");
+                        //MessageBox.Show("catch FormatException");
                     }
                 }
 
@@ -243,7 +245,7 @@ namespace DatatronTestImageViewer1
         {
 
             imgV.MdiParent = this;
-            Boolean isOpen = true;
+            //Boolean isOpen = true;
 
 
             imgV.Show();
@@ -300,7 +302,7 @@ namespace DatatronTestImageViewer1
 
         private void floatingDToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            flDiag.Show();
         }
     }
 
