@@ -37,7 +37,7 @@
             this.picImageViewer.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
             this.picImageViewer.Location = new System.Drawing.Point(12, 12);
             this.picImageViewer.Name = "picImageViewer";
-            this.picImageViewer.Size = new System.Drawing.Size(299, 374);
+            this.picImageViewer.Size = new System.Drawing.Size(414, 545);
             this.picImageViewer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picImageViewer.TabIndex = 1;
             this.picImageViewer.TabStop = false;
@@ -46,7 +46,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(322, 397);
+            this.ClientSize = new System.Drawing.Size(438, 569);
             this.Controls.Add(this.picImageViewer);
             this.Name = "ImageViewer";
             this.Text = "ImageViewer";
@@ -58,6 +58,6 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox picImageViewer;
+        public System.Windows.Forms.PictureBox picImageViewer;
     }
 }

@@ -111,7 +111,7 @@ namespace DatatronTestImageViewer1
                 setFilesArray(ofd.FileNames);
                 string[] filesCopy = getFilesArray();
 
-                //picImageViewer.SizeMode = PictureBoxSizeMode.Zoom;
+                imgV.picImageViewer.SizeMode = PictureBoxSizeMode.Zoom;
 
                 setCurrentIndex(0);
 
@@ -119,10 +119,10 @@ namespace DatatronTestImageViewer1
                 Image currentImage = Image.FromFile(filesCopy[getCurrentIndex()]);
 
                 //set image viewer to current image index
-               // picImageViewer.Image = currentImage;
-
+                imgV.picImageViewer.Image = currentImage;
+                
                 updateIndexUI();
-
+                    
             }
 
         }
@@ -179,7 +179,7 @@ namespace DatatronTestImageViewer1
         //SetImage
         public void setImage(int index)
         {
-            //imgV.picImageViewer.Image = Image.FromFile(getFilesArrayIndex(index));
+            imgV.picImageViewer.Image = Image.FromFile(getFilesArrayIndex(index));
 
         }
         //ChangeImageValue(with txtbox)
@@ -234,7 +234,7 @@ namespace DatatronTestImageViewer1
             if (sfd.ShowDialog() == DialogResult.OK && sfd.FileName.Length > 0)
             {
 
-                //imgV.picImageViewer.Image.Save(sfd.FileName);
+                imgV.picImageViewer.Image.Save(sfd.FileName);
             }
         }
 
@@ -245,10 +245,15 @@ namespace DatatronTestImageViewer1
 
         private void imageViewerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ImageViewer imgV1 = new ImageViewer();
-            imgV1.MdiParent = this;
-            imgV1.Show();
+            //ImageViewer imgV1 = new ImageViewer();
+            //imgV1.MdiParent = this;
+            //imgV1.Show();
+
+            imgV.MdiParent = this;
+            imgV.Show();
         }
+
+
     }
 
 

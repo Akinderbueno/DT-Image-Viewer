@@ -37,6 +37,8 @@
             this.openToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageViewerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,27 +47,22 @@
             this.openToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.imageViewerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1.SuspendLayout();
+            this.splitter1 = new System.Windows.Forms.Splitter();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.lblImageNo);
-            this.panel1.Controls.Add(this.txtbxLast);
-            this.panel1.Controls.Add(this.txtbxCurrent);
-            this.panel1.Location = new System.Drawing.Point(0, 27);
+            this.panel1.Location = new System.Drawing.Point(130, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(97, 600);
-            this.panel1.TabIndex = 1;
+            this.panel1.Size = new System.Drawing.Size(108, 603);
+            this.panel1.TabIndex = 0;
             // 
             // lblImageNo
             // 
             this.lblImageNo.AutoSize = true;
             this.lblImageNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImageNo.Location = new System.Drawing.Point(12, 261);
+            this.lblImageNo.Location = new System.Drawing.Point(10, 24);
             this.lblImageNo.Name = "lblImageNo";
             this.lblImageNo.Size = new System.Drawing.Size(46, 16);
             this.lblImageNo.TabIndex = 13;
@@ -73,7 +70,7 @@
             // 
             // txtbxLast
             // 
-            this.txtbxLast.Location = new System.Drawing.Point(53, 280);
+            this.txtbxLast.Location = new System.Drawing.Point(47, 43);
             this.txtbxLast.Name = "txtbxLast";
             this.txtbxLast.Size = new System.Drawing.Size(36, 20);
             this.txtbxLast.TabIndex = 12;
@@ -81,7 +78,7 @@
             // txtbxCurrent
             // 
             this.txtbxCurrent.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtbxCurrent.Location = new System.Drawing.Point(11, 280);
+            this.txtbxCurrent.Location = new System.Drawing.Point(7, 43);
             this.txtbxCurrent.Name = "txtbxCurrent";
             this.txtbxCurrent.Size = new System.Drawing.Size(36, 20);
             this.txtbxCurrent.TabIndex = 11;
@@ -129,6 +126,21 @@
             this.exitToolStripMenuItem2.Text = "Exit";
             this.exitToolStripMenuItem2.Click += new System.EventHandler(this.exitToolStripMenuItem2_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.imageViewerToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(44, 20);
+            this.toolStripMenuItem1.Text = "View";
+            // 
+            // imageViewerToolStripMenuItem
+            // 
+            this.imageViewerToolStripMenuItem.Name = "imageViewerToolStripMenuItem";
+            this.imageViewerToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.imageViewerToolStripMenuItem.Text = "Image Viewer";
+            this.imageViewerToolStripMenuItem.Click += new System.EventHandler(this.imageViewerToolStripMenuItem_Click);
+            // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -169,34 +181,26 @@
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
             this.exitToolStripMenuItem1.Size = new System.Drawing.Size(32, 19);
             // 
-            // toolStripMenuItem1
+            // splitter1
             // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.imageViewerToolStripMenuItem});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(44, 20);
-            this.toolStripMenuItem1.Text = "View";
-            // 
-            // imageViewerToolStripMenuItem
-            // 
-            this.imageViewerToolStripMenuItem.Name = "imageViewerToolStripMenuItem";
-            this.imageViewerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.imageViewerToolStripMenuItem.Text = "Image Viewer";
-            this.imageViewerToolStripMenuItem.Click += new System.EventHandler(this.imageViewerToolStripMenuItem_Click);
+            this.splitter1.Location = new System.Drawing.Point(0, 24);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(97, 603);
+            this.splitter1.TabIndex = 3;
+            this.splitter1.TabStop = false;
             // 
             // DTImageViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 627);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.splitter1);
+            this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.Name = "DTImageViewer";
             this.Text = "DTImageViewer";
             this.Load += new System.EventHandler(this.DTImageViewer_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -225,5 +229,6 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem imageViewerToolStripMenuItem;
+        private System.Windows.Forms.Splitter splitter1;
     }
 }
