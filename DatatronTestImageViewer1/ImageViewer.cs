@@ -21,5 +21,11 @@ namespace DatatronTestImageViewer1
         {
 
         }
+
+        private void ImageViewer_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MessageBox.Show("Closed");
+        }
+
     }
 }

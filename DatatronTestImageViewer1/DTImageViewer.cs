@@ -168,11 +168,11 @@ namespace DatatronTestImageViewer1
 
             //change textbox valies
             //first
-            txtbxCurrent.Text = ("" + getFileNo());
+            txtbCurrent.Text = ("" + getFileNo());
 
             //last textbox
 
-            txtbxLast.Text = ("" + getFilesArray().Length);
+            txtbLength.Text = ("" + getFilesArray().Length);
 
 
         }
@@ -180,45 +180,41 @@ namespace DatatronTestImageViewer1
         public void setImage(int index)
         {
             imgV.picImageViewer.Image = Image.FromFile(getFilesArrayIndex(index));
-
+            MessageBox.Show("gets image");
         }
         //ChangeImageValue(with txtbox)
         public void changedImageValue()
         {
             try
             {
-                if (txtbxCurrent.Text != "" & getFilesArrayIndex(0) != "")
+                if (txtbCurrent.Text != "" & getFilesArrayIndex(0) != "")
                 {
 
                     try
                     {
-                        int value = Int32.Parse(txtbxCurrent.Text);
+                        int value = Int32.Parse(txtbCurrent.Text);
                         int index = value - 1;
-
+                        MessageBox.Show("test");
                         if (value > 0 && value <= getFilesArray().Length && getFilesArray().Length > 0)
                         {
                             setImage(index);
                             setCurrentIndex(index);
+                            MessageBox.Show("changed");
                         }
                     }
 
                     catch (FormatException)
                     {
-
+                        MessageBox.Show("catch FormatException");
                     }
                 }
 
+              
             }
             catch (NullReferenceException)
             {
+                MessageBox.Show("catch NullReference");
             }
-        }
-
-
-
-        private void txtbxCurrent_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void openToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -245,15 +241,67 @@ namespace DatatronTestImageViewer1
 
         private void imageViewerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //ImageViewer imgV1 = new ImageViewer();
-            //imgV1.MdiParent = this;
-            //imgV1.Show();
 
             imgV.MdiParent = this;
+            Boolean isOpen = true;
+
+
             imgV.Show();
+
+            //imgV.Show();
+
+
+            //if (imgV.IsDisposed == true)
+            //{
+            //    imgV.Show();
+            //} 
+
+
+            //if (Application.OpenForms.OfType<ImageViewer>().Any())
+            //{
+            //    //MessageBox.Show("Form is opened");
+            //    //imgV.Close();
+            //}
+            //else if(imgV.IsDisposed == true)
+            //{
+            //    imgV.
+            //    imgV.Show();
+            //}
+            
+            //else
+            //{
+            //    //MessageBox.Show("Form is not opened");
+            //    imgV.Show();
+            //}
+
+
+
+
+
+
+
+
+
+
         }
 
 
+
+        private void txtbCurrent_TextChanged_1(object sender, EventArgs e)
+        {
+            changedImageValue();
+            
+        }
+
+        private void txtbLength_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void floatingDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

@@ -47,15 +47,23 @@
             this.openToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblImage = new System.Windows.Forms.Label();
+            this.txtbCurrent = new System.Windows.Forms.TextBox();
+            this.txtbLength = new System.Windows.Forms.TextBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
+            this.floatingDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(130, 27);
+            this.panel1.Controls.Add(this.txtbLength);
+            this.panel1.Controls.Add(this.lblImage);
+            this.panel1.Controls.Add(this.txtbCurrent);
+            this.panel1.Location = new System.Drawing.Point(3, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(108, 603);
+            this.panel1.Size = new System.Drawing.Size(81, 603);
             this.panel1.TabIndex = 0;
             // 
             // lblImageNo
@@ -77,13 +85,10 @@
             // 
             // txtbxCurrent
             // 
-            this.txtbxCurrent.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtbxCurrent.Location = new System.Drawing.Point(7, 43);
+            this.txtbxCurrent.Location = new System.Drawing.Point(0, 0);
             this.txtbxCurrent.Name = "txtbxCurrent";
-            this.txtbxCurrent.Size = new System.Drawing.Size(36, 20);
-            this.txtbxCurrent.TabIndex = 11;
-            this.txtbxCurrent.Text = " ";
-            this.txtbxCurrent.TextChanged += new System.EventHandler(this.txtbxCurrent_TextChanged);
+            this.txtbxCurrent.Size = new System.Drawing.Size(100, 20);
+            this.txtbxCurrent.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -129,7 +134,8 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.imageViewerToolStripMenuItem});
+            this.imageViewerToolStripMenuItem,
+            this.floatingDToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(44, 20);
             this.toolStripMenuItem1.Text = "View";
@@ -181,13 +187,45 @@
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
             this.exitToolStripMenuItem1.Size = new System.Drawing.Size(32, 19);
             // 
+            // lblImage
+            // 
+            this.lblImage.AutoSize = true;
+            this.lblImage.Location = new System.Drawing.Point(12, 36);
+            this.lblImage.Name = "lblImage";
+            this.lblImage.Size = new System.Drawing.Size(39, 13);
+            this.lblImage.TabIndex = 5;
+            this.lblImage.Text = "Image:";
+            // 
+            // txtbCurrent
+            // 
+            this.txtbCurrent.Location = new System.Drawing.Point(10, 52);
+            this.txtbCurrent.Name = "txtbCurrent";
+            this.txtbCurrent.Size = new System.Drawing.Size(27, 20);
+            this.txtbCurrent.TabIndex = 6;
+            this.txtbCurrent.TextChanged += new System.EventHandler(this.txtbCurrent_TextChanged_1);
+            // 
+            // txtbLength
+            // 
+            this.txtbLength.Location = new System.Drawing.Point(42, 52);
+            this.txtbLength.Name = "txtbLength";
+            this.txtbLength.Size = new System.Drawing.Size(27, 20);
+            this.txtbLength.TabIndex = 7;
+            this.txtbLength.TextChanged += new System.EventHandler(this.txtbLength_TextChanged);
+            // 
             // splitter1
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 24);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(97, 603);
-            this.splitter1.TabIndex = 3;
+            this.splitter1.Size = new System.Drawing.Size(84, 603);
+            this.splitter1.TabIndex = 9;
             this.splitter1.TabStop = false;
+            // 
+            // floatingDToolStripMenuItem
+            // 
+            this.floatingDToolStripMenuItem.Name = "floatingDToolStripMenuItem";
+            this.floatingDToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.floatingDToolStripMenuItem.Text = "Floating D";
+            this.floatingDToolStripMenuItem.Click += new System.EventHandler(this.floatingDToolStripMenuItem_Click);
             // 
             // DTImageViewer
             // 
@@ -201,6 +239,8 @@
             this.Name = "DTImageViewer";
             this.Text = "DTImageViewer";
             this.Load += new System.EventHandler(this.DTImageViewer_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -229,6 +269,10 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem imageViewerToolStripMenuItem;
+        private System.Windows.Forms.Label lblImage;
+        private System.Windows.Forms.TextBox txtbCurrent;
+        private System.Windows.Forms.TextBox txtbLength;
         private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.ToolStripMenuItem floatingDToolStripMenuItem;
     }
 }
