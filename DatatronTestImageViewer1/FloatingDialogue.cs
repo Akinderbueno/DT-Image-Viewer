@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
+
 
 namespace DatatronTestImageViewer1
 {
@@ -29,8 +31,7 @@ namespace DatatronTestImageViewer1
 
         private void FloatingDialogue_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'recordDBDataSet.Table' table. You can move, or remove it, as needed.
-            this.tableTableAdapter.Fill(this.recordDBDataSet.Table);
+            
 
 
 
@@ -39,32 +40,29 @@ namespace DatatronTestImageViewer1
         //Next and Save button 
         private void btnNextSave_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\University\Source\Repos\DT-Image-Viewer\DatatronTestImageViewer1\recordDB.mdf;Integrated Security=True");
-            con.Open();
+            string connString = ("SERVER=109.73.168.215;PORT=3306;database=robihari_datatron;UID=robihari_robi;PASSWORD=rUc!uZkqre$1;");
 
-            SqlCommand sc = new SqlCommand("Insert into values('"+payroll_IDTextBox.Text+"','"+surnameTextBox.Text+"','"+forenameTextBox.Text+"','"+titleTextBox+"','"+groupTextBox+"');",con);
 
-            int o = sc.ExecuteNonQuery();
-            MessageBox.Show(o + "  :Record has been inserted");
-            con.Close();
+            MySqlConnection conn = new MySqlConnection(connString);
+           //String insertQuery = "INSERT INTO robihari_datatron.exportcsv(Image_Name,Payroll_ID,Surname,Forename,Job_Title,Department) VALUES ('0124.tif', '124', 'Davies', 'Cale', 'Engineer', 'Software');";
+            String insertQuery = "INSERT INTO robihari_datatron.exportcsv(Image_Name,Payroll_ID,Surname,Forename,Job_Title,Department) VALUES ('Test.TIF','"+ payroll_IDTextBox.Text + "','"+ surnameTextBox.Text+ "','"+ titleTextBox.Text + "','"+ titleTextBox.Text + "','"+groupTextBox.Text+"');";
+            conn.Open();
+            MySqlCommand command = new MySqlCommand(insertQuery, conn);
+            if (command.ExecuteNonQuery() == 1)
+            {
+                MessageBox.Show("Data Inserted");
+            } else
+            {
+                MessageBox.Show("Data NOT Inserted");
+            }
 
+
+            conn.Close();
         }
 
-        private void tableBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.tableBindingSource.EndEdit();
-           
 
-        }
 
-        private void tableBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.tableBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.recordDBDataSet);
 
-        }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
@@ -75,5 +73,136 @@ namespace DatatronTestImageViewer1
         {
 
         }
+
+
+
+
+
+
+        public void SaveToCSV()
+        {
+
+
+
+
+        }
+
+        private void btnNxt_Click(object sender, EventArgs e)
+        {
+            ////DTImageViewer dtIV = new DTImageViewer();
+            //if(getCurrentIndex() < filesArray.Length)
+            //{
+            //    DTImageViewer.IncCurrentIndex(1);
+            //}
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void SelectFromDatabase()
+        {
+
+        }
+
+
+
+        private void RandomCollection()
+        {
+            //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\University\Source\Repos\DT-Image-Viewer\DatatronTestImageViewer1\recordDB.mdf;Integrated Security=True");
+            //con.Open();
+
+            //SqlCommand sc = new SqlCommand("Insert into values('"+payroll_IDTextBox.Text+"','"+surnameTextBox.Text+"','"+forenameTextBox.Text+"','"+titleTextBox+"','"+groupTextBox+"');"z);
+
+            //int o = sc.ExecuteNonQuery();
+            //MessageBox.Show(o + "  :Record has been inserted");
+            //con.Close();
+
+
+
+
+            //string constring = (@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\University\Source\Repos\DT-Image-Viewer\DatatronTestImageViewer1\recordDB.mdf;Integrated Security=True");
+
+            //string query = ("insert into recordDB.Table (Payroll ID,Surname,Forename,Title,Group) values('"+this.payroll_IDTextBox.Text+"','"+this.surnameTextBox.Text+"','"+this.forenameTextBox.Text+"','"+this.titleTextBox.Text+"','"+this.groupTextBox.Text+"') ; ");
+
+            //SqlConnection conDatabase = new SqlConnection(constring);
+            //SqlCommand cmdDatabase = new SqlCommand(query);
+
+            //SqlDataReader myReader;
+
+            //try
+            //{
+            //    conDatabase.Open();
+            //    myReader = cmdDatabase.ExecuteReader();
+            //    MessageBox.Show("Saved");
+
+            //    while (myReader.Read())
+            //    {
+
+            //    }
+
+            //} catch(Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+
+
+
+            //MySqlCommand command = conn
+            //("insert into recordDB.Table (Payroll ID,Surname,Forename,Title,Group) values('"+this.payroll_IDTextBox.Text+"','"+this.surnameTextBox.Text+"','"+this.forenameTextBox.Text+"','"+this.titleTextBox.Text+"','"+this.groupTextBox.Text+"') ; ");
+
+            // MySqlConnection conDatabase = new MySqlConnection(conString);
+
+
+            //command.CommandText = "INSERT INTO exportcsv (Imagename,PayrollID,Surname,Forename,JobTitle,Department) VALUES('0123.tif','123','Harid','Robi','Engineer','Software');";
+
+
+            //            try
+            //            {
+            //                MySqlConnection conn = new MySqlConnection();
+            //                conn.ConnectionString = conString;
+            //                conn.Open();
+            //                MessageBox.Show("Connection Success!");
+            //}
+            //            catch (MySql.Data.MySqlClient.MySqlException ex)
+            //            {
+            //                MessageBox.Show(ex.Message);
+            //            }
+
+            //string connString = ("SERVER=109.73.168.215;PORT=3306;database=robihari_datatron;UID=robihari_robi;PASSWORD=rUc!uZkqre$1;");
+
+            //MySqlConnection conn = new MySqlConnection(connString);
+            //MySqlCommand command = conn.CreateCommand();
+            //command.CommandText = ("SELECT * FROM exportcsv ;");
+            ////conn.Open();
+            ////command.ExecuteNonQuery();
+
+
+            //try
+            //{
+
+            //    conn.Open();
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+
+            //}
+
+            //MySqlDataReader reader = command.ExecuteReader();
+
+
+            //while (reader.Read())
+            //{
+            //    MessageBox.Show(reader["text"].ToString());
+
+            //}
+
+        }
+
+
     }
 }

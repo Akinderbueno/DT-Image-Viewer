@@ -30,8 +30,8 @@ namespace DatatronTestImageViewer1
         ImageViewer imgV = new ImageViewer();
         FloatingDialogue flDiag = new FloatingDialogue();
 
-        
-        
+
+
         //---------------------------------------------
 
 
@@ -43,13 +43,13 @@ namespace DatatronTestImageViewer1
 
         //Get/Set Methods--------------------------------------
 
+
         //Get Current Index
         public int getCurrentIndex()
         {
             return CURRENT_INDEX;
 
         }
-
 
         //Set Current Index
         public void setCurrentIndex(int currentIndex)
@@ -182,7 +182,7 @@ namespace DatatronTestImageViewer1
         public void setImage(int index)
         {
             imgV.picImageViewer.Image = Image.FromFile(getFilesArrayIndex(index));
-            MessageBox.Show("gets image");
+            //MessageBox.Show("gets image");
         }
         //ChangeImageValue(with txtbox)
         public void changedImageValue()
@@ -287,8 +287,13 @@ namespace DatatronTestImageViewer1
 
         }
 
+        private void floatingDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            flDiag.Show();
+        }
 
 
+        //Current and Last image Textbox functions
         private void txtbCurrent_TextChanged_1(object sender, EventArgs e)
         {
             changedImageValue();
@@ -300,9 +305,101 @@ namespace DatatronTestImageViewer1
 
         }
 
-        private void floatingDToolStripMenuItem_Click(object sender, EventArgs e)
+
+
+
+
+
+        //Closing image viewer(not functional)
+        private void ImageViewer_FormClosing(object sender, FormClosingEventArgs e)
         {
-            flDiag.Show();
+            e.Cancel = true; // this cancels the close event.
+            this.Hide();
+            MessageBox.Show("hidden");
+        }
+
+
+
+        //Zoom Functions
+        public void ZoomIn(Int32 ZoomValue)
+        {
+            if (getCurrentIndex().Equals(null))
+            {
+                MessageBox.Show("null image");
+
+            }
+            //Image currentImage = imgV.picImageViewer.Image;
+
+            //Bitmap zoomImage = new Bitmap(currentImage,(Convert.ToInt32(imgV.picImageViewer.Width * (ZoomValue) / 100)),(Convert.ToInt32(imgV.picImageViewer.Height * (ZoomValue / 100))));
+
+            //Graphics converted = Graphics.FromImage(zoomImage);
+
+            //converted.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+
+            //imgV.picImageViewer.Image = null;
+
+            //imgV.picImageViewer.Image = zoomImage;
+
+
+
+            imgV.picImageViewer.Width = Convert.ToInt32(imgV.picImageViewer.Width + ZoomValue);
+            imgV.picImageViewer.Height = Convert.ToInt32(imgV.picImageViewer.Height + ZoomValue);
+            imgV.picImageViewer.SizeMode = PictureBoxSizeMode.Zoom;
+
+        }
+
+        public void ZoomOut(int ZoomValue)
+        {
+            imgV.picImageViewer.Width = Convert.ToInt32(imgV.picImageViewer.Width - ZoomValue);
+            imgV.picImageViewer.Height = Convert.ToInt32(imgV.picImageViewer.Height - ZoomValue);
+            imgV.picImageViewer.SizeMode = PictureBoxSizeMode.Zoom;
+        }  
+
+        //ZoomButtons
+        private void btnZoom_Click(object sender, EventArgs e)
+        {
+            ZoomIn(50);
+            //this.Cursor = Cursors.SizeAll;
+        }
+
+        private void btnZoomOut_Click(object sender, EventArgs e)
+        {
+            ZoomOut(50);
+        }
+
+
+
+        //MOuse craic
+        private Point _StartPoint;
+
+        private void picImageViewer_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+                _StartPoint = e.Location;
+
+            MessageBox.Show("Mousedown");
+        }
+
+
+        private void picImageViewer_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point changePoint = new Point(e.Location.X - _StartPoint.X,
+                                              e.Location.Y - _StartPoint.Y);
+                imgV.pnlImageV.AutoScrollPosition = new Point(-imgV.pnlImageV.AutoScrollPosition.X - changePoint.X,
+                                                      -imgV.pnlImageV.AutoScrollPosition.Y - changePoint.Y);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            DataGridView dg = new DataGridView();
+            dg.MdiParent = this;
+
+            dg.Show();
+            
         }
     }
 

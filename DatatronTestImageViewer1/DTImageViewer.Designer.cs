@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnZoomOut = new System.Windows.Forms.Button();
+            this.btnZoom = new System.Windows.Forms.Button();
+            this.txtbLength = new System.Windows.Forms.TextBox();
+            this.lblImage = new System.Windows.Forms.Label();
+            this.txtbCurrent = new System.Windows.Forms.TextBox();
             this.lblImageNo = new System.Windows.Forms.Label();
             this.txtbxLast = new System.Windows.Forms.TextBox();
             this.txtbxCurrent = new System.Windows.Forms.TextBox();
@@ -39,6 +44,7 @@
             this.exitToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.imageViewerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.floatingDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,24 +53,69 @@
             this.openToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblImage = new System.Windows.Forms.Label();
-            this.txtbCurrent = new System.Windows.Forms.TextBox();
-            this.txtbLength = new System.Windows.Forms.TextBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.floatingDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnZoomOut);
+            this.panel1.Controls.Add(this.btnZoom);
             this.panel1.Controls.Add(this.txtbLength);
             this.panel1.Controls.Add(this.lblImage);
             this.panel1.Controls.Add(this.txtbCurrent);
             this.panel1.Location = new System.Drawing.Point(3, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(81, 603);
+            this.panel1.Size = new System.Drawing.Size(94, 655);
             this.panel1.TabIndex = 0;
+            // 
+            // btnZoomOut
+            // 
+            this.btnZoomOut.Location = new System.Drawing.Point(10, 592);
+            this.btnZoomOut.Name = "btnZoomOut";
+            this.btnZoomOut.Size = new System.Drawing.Size(60, 51);
+            this.btnZoomOut.TabIndex = 9;
+            this.btnZoomOut.Text = "Zoom Out";
+            this.btnZoomOut.UseVisualStyleBackColor = true;
+            this.btnZoomOut.Click += new System.EventHandler(this.btnZoomOut_Click);
+            // 
+            // btnZoom
+            // 
+            this.btnZoom.Location = new System.Drawing.Point(9, 535);
+            this.btnZoom.Name = "btnZoom";
+            this.btnZoom.Size = new System.Drawing.Size(60, 51);
+            this.btnZoom.TabIndex = 8;
+            this.btnZoom.Text = "Zoom In";
+            this.btnZoom.UseVisualStyleBackColor = true;
+            this.btnZoom.Click += new System.EventHandler(this.btnZoom_Click);
+            // 
+            // txtbLength
+            // 
+            this.txtbLength.Location = new System.Drawing.Point(42, 52);
+            this.txtbLength.Name = "txtbLength";
+            this.txtbLength.Size = new System.Drawing.Size(27, 20);
+            this.txtbLength.TabIndex = 7;
+            this.txtbLength.TextChanged += new System.EventHandler(this.txtbLength_TextChanged);
+            // 
+            // lblImage
+            // 
+            this.lblImage.AutoSize = true;
+            this.lblImage.Location = new System.Drawing.Point(12, 36);
+            this.lblImage.Name = "lblImage";
+            this.lblImage.Size = new System.Drawing.Size(39, 13);
+            this.lblImage.TabIndex = 5;
+            this.lblImage.Text = "Image:";
+            // 
+            // txtbCurrent
+            // 
+            this.txtbCurrent.Location = new System.Drawing.Point(10, 52);
+            this.txtbCurrent.Name = "txtbCurrent";
+            this.txtbCurrent.Size = new System.Drawing.Size(27, 20);
+            this.txtbCurrent.TabIndex = 6;
+            this.txtbCurrent.TextChanged += new System.EventHandler(this.txtbCurrent_TextChanged_1);
             // 
             // lblImageNo
             // 
@@ -97,7 +148,7 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1100, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
             this.menuStrip1.TabIndex = 0;
             // 
             // fileToolStripMenuItem2
@@ -147,6 +198,13 @@
             this.imageViewerToolStripMenuItem.Text = "Image Viewer";
             this.imageViewerToolStripMenuItem.Click += new System.EventHandler(this.imageViewerToolStripMenuItem_Click);
             // 
+            // floatingDToolStripMenuItem
+            // 
+            this.floatingDToolStripMenuItem.Name = "floatingDToolStripMenuItem";
+            this.floatingDToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.floatingDToolStripMenuItem.Text = "Floating D";
+            this.floatingDToolStripMenuItem.Click += new System.EventHandler(this.floatingDToolStripMenuItem_Click);
+            // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -187,56 +245,35 @@
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
             this.exitToolStripMenuItem1.Size = new System.Drawing.Size(32, 19);
             // 
-            // lblImage
-            // 
-            this.lblImage.AutoSize = true;
-            this.lblImage.Location = new System.Drawing.Point(12, 36);
-            this.lblImage.Name = "lblImage";
-            this.lblImage.Size = new System.Drawing.Size(39, 13);
-            this.lblImage.TabIndex = 5;
-            this.lblImage.Text = "Image:";
-            // 
-            // txtbCurrent
-            // 
-            this.txtbCurrent.Location = new System.Drawing.Point(10, 52);
-            this.txtbCurrent.Name = "txtbCurrent";
-            this.txtbCurrent.Size = new System.Drawing.Size(27, 20);
-            this.txtbCurrent.TabIndex = 6;
-            this.txtbCurrent.TextChanged += new System.EventHandler(this.txtbCurrent_TextChanged_1);
-            // 
-            // txtbLength
-            // 
-            this.txtbLength.Location = new System.Drawing.Point(42, 52);
-            this.txtbLength.Name = "txtbLength";
-            this.txtbLength.Size = new System.Drawing.Size(27, 20);
-            this.txtbLength.TabIndex = 7;
-            this.txtbLength.TextChanged += new System.EventHandler(this.txtbLength_TextChanged);
-            // 
             // splitter1
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 24);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(84, 603);
+            this.splitter1.Size = new System.Drawing.Size(97, 658);
             this.splitter1.TabIndex = 9;
             this.splitter1.TabStop = false;
             // 
-            // floatingDToolStripMenuItem
+            // button1
             // 
-            this.floatingDToolStripMenuItem.Name = "floatingDToolStripMenuItem";
-            this.floatingDToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.floatingDToolStripMenuItem.Text = "Floating D";
-            this.floatingDToolStripMenuItem.Click += new System.EventHandler(this.floatingDToolStripMenuItem_Click);
+            this.button1.Location = new System.Drawing.Point(9, 106);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // DTImageViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 627);
+            this.ClientSize = new System.Drawing.Size(1264, 682);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.Name = "DTImageViewer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DTImageViewer";
             this.Load += new System.EventHandler(this.DTImageViewer_Load);
             this.panel1.ResumeLayout(false);
@@ -274,5 +311,8 @@
         private System.Windows.Forms.TextBox txtbLength;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.ToolStripMenuItem floatingDToolStripMenuItem;
+        private System.Windows.Forms.Button btnZoom;
+        private System.Windows.Forms.Button btnZoomOut;
+        private System.Windows.Forms.Button button1;
     }
 }

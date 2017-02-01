@@ -29,106 +29,95 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FloatingDialogue));
             System.Windows.Forms.Label payroll_IDLabel;
             System.Windows.Forms.Label surnameLabel;
             System.Windows.Forms.Label forenameLabel;
             System.Windows.Forms.Label titleLabel;
             System.Windows.Forms.Label groupLabel;
-            this.lblPayroll = new System.Windows.Forms.Label();
-            this.txtbPayroll = new System.Windows.Forms.TextBox();
-            this.txtbSurname = new System.Windows.Forms.TextBox();
-            this.txtForename = new System.Windows.Forms.TextBox();
-            this.txtbTitle = new System.Windows.Forms.TextBox();
-            this.txtbGroup = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FloatingDialogue));
             this.btnNextSave = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
-            this.lblSurname = new System.Windows.Forms.Label();
-            this.lblForename = new System.Windows.Forms.Label();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.lblGroup = new System.Windows.Forms.Label();
-            this.recordDBDataSet = new DatatronTestImageViewer1.recordDBDataSet();
-            this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tableTableAdapter = new DatatronTestImageViewer1.recordDBDataSetTableAdapters.TableTableAdapter();
-            this.tableAdapterManager = new DatatronTestImageViewer1.recordDBDataSetTableAdapters.TableAdapterManager();
             this.tableBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.tableBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.payroll_IDTextBox = new System.Windows.Forms.TextBox();
             this.surnameTextBox = new System.Windows.Forms.TextBox();
             this.forenameTextBox = new System.Windows.Forms.TextBox();
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.groupTextBox = new System.Windows.Forms.TextBox();
+            this.btnPrev = new System.Windows.Forms.Button();
+            this.btnNxt = new System.Windows.Forms.Button();
             payroll_IDLabel = new System.Windows.Forms.Label();
             surnameLabel = new System.Windows.Forms.Label();
             forenameLabel = new System.Windows.Forms.Label();
             titleLabel = new System.Windows.Forms.Label();
             groupLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.recordDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingNavigator)).BeginInit();
             this.tableBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
+            
             this.SuspendLayout();
             // 
-            // lblPayroll
+            // payroll_IDLabel
             // 
-            this.lblPayroll.AutoSize = true;
-            this.lblPayroll.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPayroll.Location = new System.Drawing.Point(248, 48);
-            this.lblPayroll.Name = "lblPayroll";
-            this.lblPayroll.Size = new System.Drawing.Size(82, 15);
-            this.lblPayroll.TabIndex = 0;
-            this.lblPayroll.Text = "PAYROLL NO";
+            payroll_IDLabel.AutoSize = true;
+            payroll_IDLabel.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            payroll_IDLabel.Location = new System.Drawing.Point(16, 35);
+            payroll_IDLabel.Name = "payroll_IDLabel";
+            payroll_IDLabel.Size = new System.Drawing.Size(82, 18);
+            payroll_IDLabel.TabIndex = 16;
+            payroll_IDLabel.Text = "Payroll ID:";
             // 
-            // txtbPayroll
+            // surnameLabel
             // 
-            this.txtbPayroll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbPayroll.Location = new System.Drawing.Point(336, 44);
-            this.txtbPayroll.Name = "txtbPayroll";
-            this.txtbPayroll.Size = new System.Drawing.Size(168, 22);
-            this.txtbPayroll.TabIndex = 1;
+            surnameLabel.AutoSize = true;
+            surnameLabel.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            surnameLabel.Location = new System.Drawing.Point(22, 61);
+            surnameLabel.Name = "surnameLabel";
+            surnameLabel.Size = new System.Drawing.Size(76, 18);
+            surnameLabel.TabIndex = 18;
+            surnameLabel.Text = "Surname:";
             // 
-            // txtbSurname
+            // forenameLabel
             // 
-            this.txtbSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbSurname.Location = new System.Drawing.Point(336, 73);
-            this.txtbSurname.Name = "txtbSurname";
-            this.txtbSurname.Size = new System.Drawing.Size(168, 22);
-            this.txtbSurname.TabIndex = 3;
+            forenameLabel.AutoSize = true;
+            forenameLabel.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            forenameLabel.Location = new System.Drawing.Point(12, 88);
+            forenameLabel.Name = "forenameLabel";
+            forenameLabel.Size = new System.Drawing.Size(86, 18);
+            forenameLabel.TabIndex = 20;
+            forenameLabel.Text = "Forename:";
             // 
-            // txtForename
+            // titleLabel
             // 
-            this.txtForename.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtForename.Location = new System.Drawing.Point(336, 105);
-            this.txtForename.Name = "txtForename";
-            this.txtForename.Size = new System.Drawing.Size(168, 22);
-            this.txtForename.TabIndex = 5;
+            titleLabel.AutoSize = true;
+            titleLabel.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            titleLabel.Location = new System.Drawing.Point(52, 113);
+            titleLabel.Name = "titleLabel";
+            titleLabel.Size = new System.Drawing.Size(46, 18);
+            titleLabel.TabIndex = 22;
+            titleLabel.Text = "Title:";
             // 
-            // txtbTitle
+            // groupLabel
             // 
-            this.txtbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbTitle.Location = new System.Drawing.Point(336, 135);
-            this.txtbTitle.Name = "txtbTitle";
-            this.txtbTitle.Size = new System.Drawing.Size(168, 22);
-            this.txtbTitle.TabIndex = 7;
-            // 
-            // txtbGroup
-            // 
-            this.txtbGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbGroup.Location = new System.Drawing.Point(336, 166);
-            this.txtbGroup.Name = "txtbGroup";
-            this.txtbGroup.Size = new System.Drawing.Size(168, 22);
-            this.txtbGroup.TabIndex = 9;
+            groupLabel.AutoSize = true;
+            groupLabel.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            groupLabel.Location = new System.Drawing.Point(36, 139);
+            groupLabel.Name = "groupLabel";
+            groupLabel.Size = new System.Drawing.Size(59, 18);
+            groupLabel.TabIndex = 24;
+            groupLabel.Text = "Group:";
             // 
             // btnNextSave
             // 
@@ -148,66 +137,6 @@
             this.btnPrevious.TabIndex = 11;
             this.btnPrevious.Text = "Previous";
             this.btnPrevious.UseVisualStyleBackColor = true;
-            // 
-            // lblSurname
-            // 
-            this.lblSurname.AutoSize = true;
-            this.lblSurname.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSurname.Location = new System.Drawing.Point(264, 77);
-            this.lblSurname.Name = "lblSurname";
-            this.lblSurname.Size = new System.Drawing.Size(66, 15);
-            this.lblSurname.TabIndex = 12;
-            this.lblSurname.Text = "SURNAME";
-            // 
-            // lblForename
-            // 
-            this.lblForename.AutoSize = true;
-            this.lblForename.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblForename.Location = new System.Drawing.Point(256, 109);
-            this.lblForename.Name = "lblForename";
-            this.lblForename.Size = new System.Drawing.Size(74, 15);
-            this.lblForename.TabIndex = 13;
-            this.lblForename.Text = "FORENAME";
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(292, 139);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(38, 15);
-            this.lblTitle.TabIndex = 14;
-            this.lblTitle.Text = "TITLE";
-            // 
-            // lblGroup
-            // 
-            this.lblGroup.AutoSize = true;
-            this.lblGroup.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGroup.Location = new System.Drawing.Point(280, 170);
-            this.lblGroup.Name = "lblGroup";
-            this.lblGroup.Size = new System.Drawing.Size(50, 15);
-            this.lblGroup.TabIndex = 15;
-            this.lblGroup.Text = "GROUP";
-            // 
-            // recordDBDataSet
-            // 
-            this.recordDBDataSet.DataSetName = "recordDBDataSet";
-            this.recordDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tableBindingSource
-            // 
-            this.tableBindingSource.DataMember = "Table";
-            this.tableBindingSource.DataSource = this.recordDBDataSet;
-            // 
-            // tableTableAdapter
-            // 
-            this.tableTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.TableTableAdapter = this.tableTableAdapter;
-            this.tableAdapterManager.UpdateOrder = DatatronTestImageViewer1.recordDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // tableBindingNavigator
             // 
@@ -235,9 +164,36 @@
             this.tableBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.tableBindingNavigator.Name = "tableBindingNavigator";
             this.tableBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.tableBindingNavigator.Size = new System.Drawing.Size(520, 25);
+            this.tableBindingNavigator.Size = new System.Drawing.Size(282, 25);
             this.tableBindingNavigator.TabIndex = 16;
             this.tableBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
+            
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -248,7 +204,15 @@
             this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
-            
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            this.bindingNavigatorMovePreviousItem.Click += new System.EventHandler(this.bindingNavigatorMovePreviousItem_Click);
             // 
             // bindingNavigatorSeparator
             // 
@@ -264,16 +228,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -296,36 +253,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            this.bindingNavigatorMovePreviousItem.Click += new System.EventHandler(this.bindingNavigatorMovePreviousItem_Click);
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // tableBindingNavigatorSaveItem
             // 
@@ -334,98 +263,75 @@
             this.tableBindingNavigatorSaveItem.Name = "tableBindingNavigatorSaveItem";
             this.tableBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.tableBindingNavigatorSaveItem.Text = "Save Data";
-            this.tableBindingNavigatorSaveItem.Click += new System.EventHandler(this.tableBindingNavigatorSaveItem_Click_1);
-            // 
-            // payroll_IDLabel
-            // 
-            payroll_IDLabel.AutoSize = true;
-            payroll_IDLabel.Location = new System.Drawing.Point(12, 36);
-            payroll_IDLabel.Name = "payroll_IDLabel";
-            payroll_IDLabel.Size = new System.Drawing.Size(55, 13);
-            payroll_IDLabel.TabIndex = 16;
-            payroll_IDLabel.Text = "Payroll ID:";
-            // 
+            
             // payroll_IDTextBox
             // 
             this.payroll_IDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "Payroll ID", true));
-            this.payroll_IDTextBox.Location = new System.Drawing.Point(75, 33);
+            this.payroll_IDTextBox.Location = new System.Drawing.Point(101, 33);
             this.payroll_IDTextBox.Name = "payroll_IDTextBox";
             this.payroll_IDTextBox.Size = new System.Drawing.Size(100, 20);
             this.payroll_IDTextBox.TabIndex = 17;
             // 
-            // surnameLabel
-            // 
-            surnameLabel.AutoSize = true;
-            surnameLabel.Location = new System.Drawing.Point(12, 62);
-            surnameLabel.Name = "surnameLabel";
-            surnameLabel.Size = new System.Drawing.Size(52, 13);
-            surnameLabel.TabIndex = 18;
-            surnameLabel.Text = "Surname:";
-            // 
             // surnameTextBox
             // 
             this.surnameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "Surname", true));
-            this.surnameTextBox.Location = new System.Drawing.Point(75, 59);
+            this.surnameTextBox.Location = new System.Drawing.Point(101, 59);
             this.surnameTextBox.Name = "surnameTextBox";
             this.surnameTextBox.Size = new System.Drawing.Size(100, 20);
             this.surnameTextBox.TabIndex = 19;
             // 
-            // forenameLabel
-            // 
-            forenameLabel.AutoSize = true;
-            forenameLabel.Location = new System.Drawing.Point(12, 88);
-            forenameLabel.Name = "forenameLabel";
-            forenameLabel.Size = new System.Drawing.Size(57, 13);
-            forenameLabel.TabIndex = 20;
-            forenameLabel.Text = "Forename:";
-            // 
             // forenameTextBox
             // 
             this.forenameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "Forename", true));
-            this.forenameTextBox.Location = new System.Drawing.Point(75, 85);
+            this.forenameTextBox.Location = new System.Drawing.Point(101, 85);
             this.forenameTextBox.Name = "forenameTextBox";
             this.forenameTextBox.Size = new System.Drawing.Size(100, 20);
             this.forenameTextBox.TabIndex = 21;
             // 
-            // titleLabel
-            // 
-            titleLabel.AutoSize = true;
-            titleLabel.Location = new System.Drawing.Point(12, 114);
-            titleLabel.Name = "titleLabel";
-            titleLabel.Size = new System.Drawing.Size(30, 13);
-            titleLabel.TabIndex = 22;
-            titleLabel.Text = "Title:";
-            // 
             // titleTextBox
             // 
             this.titleTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "Title", true));
-            this.titleTextBox.Location = new System.Drawing.Point(75, 111);
+            this.titleTextBox.Location = new System.Drawing.Point(101, 111);
             this.titleTextBox.Name = "titleTextBox";
             this.titleTextBox.Size = new System.Drawing.Size(100, 20);
             this.titleTextBox.TabIndex = 23;
             // 
-            // groupLabel
-            // 
-            groupLabel.AutoSize = true;
-            groupLabel.Location = new System.Drawing.Point(12, 140);
-            groupLabel.Name = "groupLabel";
-            groupLabel.Size = new System.Drawing.Size(39, 13);
-            groupLabel.TabIndex = 24;
-            groupLabel.Text = "Group:";
-            // 
             // groupTextBox
             // 
             this.groupTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "Group", true));
-            this.groupTextBox.Location = new System.Drawing.Point(75, 137);
+            this.groupTextBox.Location = new System.Drawing.Point(101, 137);
             this.groupTextBox.Name = "groupTextBox";
             this.groupTextBox.Size = new System.Drawing.Size(100, 20);
             this.groupTextBox.TabIndex = 25;
+            // 
+           
+           
+            // btnPrev
+            // 
+            this.btnPrev.Location = new System.Drawing.Point(13, 227);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.Size = new System.Drawing.Size(75, 23);
+            this.btnPrev.TabIndex = 26;
+            this.btnPrev.Text = "<";
+            this.btnPrev.UseVisualStyleBackColor = true;
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
+            // 
+            // btnNxt
+            // 
+            this.btnNxt.Location = new System.Drawing.Point(195, 227);
+            this.btnNxt.Name = "btnNxt";
+            this.btnNxt.Size = new System.Drawing.Size(75, 23);
+            this.btnNxt.TabIndex = 0;
+            this.btnNxt.Text = ">";
+            this.btnNxt.Click += new System.EventHandler(this.btnNxt_Click);
             // 
             // FloatingDialogue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 239);
+            this.ClientSize = new System.Drawing.Size(282, 262);
+            this.Controls.Add(this.btnNxt);
+            this.Controls.Add(this.btnPrev);
             this.Controls.Add(payroll_IDLabel);
             this.Controls.Add(this.payroll_IDTextBox);
             this.Controls.Add(surnameLabel);
@@ -437,49 +343,26 @@
             this.Controls.Add(groupLabel);
             this.Controls.Add(this.groupTextBox);
             this.Controls.Add(this.tableBindingNavigator);
-            this.Controls.Add(this.lblGroup);
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.lblForename);
-            this.Controls.Add(this.lblSurname);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnNextSave);
-            this.Controls.Add(this.txtbGroup);
-            this.Controls.Add(this.txtbTitle);
-            this.Controls.Add(this.txtForename);
-            this.Controls.Add(this.txtbSurname);
-            this.Controls.Add(this.txtbPayroll);
-            this.Controls.Add(this.lblPayroll);
             this.Name = "FloatingDialogue";
             this.Text = "d";
             this.Load += new System.EventHandler(this.FloatingDialogue_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.recordDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingNavigator)).EndInit();
             this.tableBindingNavigator.ResumeLayout(false);
             this.tableBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblPayroll;
-        private System.Windows.Forms.TextBox txtbPayroll;
-        private System.Windows.Forms.TextBox txtbSurname;
-        private System.Windows.Forms.TextBox txtForename;
-        private System.Windows.Forms.TextBox txtbTitle;
-        private System.Windows.Forms.TextBox txtbGroup;
         private System.Windows.Forms.Button btnNextSave;
         private System.Windows.Forms.Button btnPrevious;
-        private System.Windows.Forms.Label lblSurname;
-        private System.Windows.Forms.Label lblForename;
-        private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label lblGroup;
-        private recordDBDataSet recordDBDataSet;
+        
         private System.Windows.Forms.BindingSource tableBindingSource;
-        private recordDBDataSetTableAdapters.TableTableAdapter tableTableAdapter;
-        private recordDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator tableBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -498,5 +381,7 @@
         private System.Windows.Forms.TextBox forenameTextBox;
         private System.Windows.Forms.TextBox titleTextBox;
         private System.Windows.Forms.TextBox groupTextBox;
+        private System.Windows.Forms.Button btnPrev;
+        private System.Windows.Forms.Button btnNxt;
     }
 }

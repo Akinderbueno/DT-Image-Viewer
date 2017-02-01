@@ -22,10 +22,14 @@ namespace DatatronTestImageViewer1
 
         }
 
+        // Use this event handler for the FormClosing event.
+
+
         private void ImageViewer_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             MessageBox.Show("Closed");
         }
 
+       
     }
 }
