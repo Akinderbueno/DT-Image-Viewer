@@ -19,7 +19,7 @@ namespace DatatronTestImageViewer1
         public DTImageViewer()
         {
             InitializeComponent();
-            DTImageViewer DTI = new DTImageViewer();
+           
         }
 
         private void DTImageViewer_Load(object sender, EventArgs e)
@@ -256,38 +256,7 @@ namespace DatatronTestImageViewer1
 
             imgV.Show();
 
-            //imgV.Show();
-
-
-            //if (imgV.IsDisposed == true)
-            //{
-            //    imgV.Show();
-            //} 
-
-
-            //if (Application.OpenForms.OfType<ImageViewer>().Any())
-            //{
-            //    //MessageBox.Show("Form is opened");
-            //    //imgV.Close();
-            //}
-            //else if(imgV.IsDisposed == true)
-            //{
-            //    imgV.
-            //    imgV.Show();
-            //}
             
-            //else
-            //{
-            //    //MessageBox.Show("Form is not opened");
-            //    imgV.Show();
-            //}
-
-
-
-
-
-
-
 
 
 
@@ -334,19 +303,7 @@ namespace DatatronTestImageViewer1
                 MessageBox.Show("null image");
 
             }
-            //Image currentImage = imgV.picImageViewer.Image;
-
-            //Bitmap zoomImage = new Bitmap(currentImage,(Convert.ToInt32(imgV.picImageViewer.Width * (ZoomValue) / 100)),(Convert.ToInt32(imgV.picImageViewer.Height * (ZoomValue / 100))));
-
-            //Graphics converted = Graphics.FromImage(zoomImage);
-
-            //converted.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
-
-            //imgV.picImageViewer.Image = null;
-
-            //imgV.picImageViewer.Image = zoomImage;
-
-
+          
 
             imgV.picImageViewer.Width = Convert.ToInt32(imgV.picImageViewer.Width + ZoomValue);
             imgV.picImageViewer.Height = Convert.ToInt32(imgV.picImageViewer.Height + ZoomValue);
@@ -408,10 +365,6 @@ namespace DatatronTestImageViewer1
             
         }
 
-        private void masterBranchToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 
 
