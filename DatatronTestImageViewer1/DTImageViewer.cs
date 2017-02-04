@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace DatatronTestImageViewer1
 {
+
+
     public partial class DTImageViewer : Form
     {
+
+
         public DTImageViewer()
         {
             InitializeComponent();
+            DTImageViewer DTI = new DTImageViewer();
         }
 
         private void DTImageViewer_Load(object sender, EventArgs e)
@@ -27,10 +32,8 @@ namespace DatatronTestImageViewer1
         //Fields --------------------------------------
         private int CURRENT_INDEX;
         private string[] filesArray;
-        ImageViewer imgV = new ImageViewer();
+        public ImageViewer imgV = new ImageViewer();
         FloatingDialogue flDiag = new FloatingDialogue();
-
-
 
         //---------------------------------------------
 
@@ -111,6 +114,9 @@ namespace DatatronTestImageViewer1
             {
                 //Creates an array of imported file Names. Call index with string[x]
                 setFilesArray(ofd.FileNames);
+
+                //GlobalV.setFilesArray(ofd.FileNames);
+
                 string[] filesCopy = getFilesArray();
 
                 imgV.picImageViewer.SizeMode = PictureBoxSizeMode.Zoom;

@@ -58,6 +58,8 @@
             this.groupTextBox = new System.Windows.Forms.TextBox();
             this.btnPrev = new System.Windows.Forms.Button();
             this.btnNxt = new System.Windows.Forms.Button();
+            this.txtbImgnm = new System.Windows.Forms.TextBox();
+            this.btnGetImgnm = new System.Windows.Forms.Button();
             payroll_IDLabel = new System.Windows.Forms.Label();
             surnameLabel = new System.Windows.Forms.Label();
             forenameLabel = new System.Windows.Forms.Label();
@@ -66,7 +68,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingNavigator)).BeginInit();
             this.tableBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
-            
             this.SuspendLayout();
             // 
             // payroll_IDLabel
@@ -178,7 +179,6 @@
             this.bindingNavigatorAddNewItem.Text = "Add new";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
-            
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
@@ -263,7 +263,7 @@
             this.tableBindingNavigatorSaveItem.Name = "tableBindingNavigatorSaveItem";
             this.tableBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.tableBindingNavigatorSaveItem.Text = "Save Data";
-            
+            // 
             // payroll_IDTextBox
             // 
             this.payroll_IDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "Payroll ID", true));
@@ -304,8 +304,6 @@
             this.groupTextBox.Size = new System.Drawing.Size(100, 20);
             this.groupTextBox.TabIndex = 25;
             // 
-           
-           
             // btnPrev
             // 
             this.btnPrev.Location = new System.Drawing.Point(13, 227);
@@ -325,11 +323,30 @@
             this.btnNxt.Text = ">";
             this.btnNxt.Click += new System.EventHandler(this.btnNxt_Click);
             // 
+            // txtbImgnm
+            // 
+            this.txtbImgnm.Location = new System.Drawing.Point(170, 296);
+            this.txtbImgnm.Name = "txtbImgnm";
+            this.txtbImgnm.Size = new System.Drawing.Size(100, 20);
+            this.txtbImgnm.TabIndex = 27;
+            // 
+            // btnGetImgnm
+            // 
+            this.btnGetImgnm.Location = new System.Drawing.Point(89, 296);
+            this.btnGetImgnm.Name = "btnGetImgnm";
+            this.btnGetImgnm.Size = new System.Drawing.Size(75, 23);
+            this.btnGetImgnm.TabIndex = 28;
+            this.btnGetImgnm.Text = "button1";
+            this.btnGetImgnm.UseVisualStyleBackColor = true;
+            this.btnGetImgnm.Click += new System.EventHandler(this.btnGetImgnm_Click);
+            // 
             // FloatingDialogue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 262);
+            this.ClientSize = new System.Drawing.Size(282, 328);
+            this.Controls.Add(this.btnGetImgnm);
+            this.Controls.Add(this.txtbImgnm);
             this.Controls.Add(this.btnNxt);
             this.Controls.Add(this.btnPrev);
             this.Controls.Add(payroll_IDLabel);
@@ -352,7 +369,6 @@
             this.tableBindingNavigator.ResumeLayout(false);
             this.tableBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
-            
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,5 +399,7 @@
         private System.Windows.Forms.TextBox groupTextBox;
         private System.Windows.Forms.Button btnPrev;
         private System.Windows.Forms.Button btnNxt;
+        private System.Windows.Forms.TextBox txtbImgnm;
+        private System.Windows.Forms.Button btnGetImgnm;
     }
 }

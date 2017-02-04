@@ -87,6 +87,7 @@
     <Compile Include="FloatingDialogue.Designer.cs">
       <DependentUpon>FloatingDialogue.cs</DependentUpon>
     </Compile>
+    <Compile Include="GlobalV.cs" />
     <Compile Include="ImageViewer.cs">
       <SubType>Form</SubType>
     </Compile>

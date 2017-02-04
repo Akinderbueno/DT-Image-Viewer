@@ -18,7 +18,12 @@ namespace DatatronTestImageViewer1
 
         //Fields
 
-        
+        //private DTImageViewer imageViewer1 = new DTImageViewer();
+
+        //string newString = newDti.getFilesArrayIndex(0);
+
+         
+
 
 
 
@@ -27,6 +32,12 @@ namespace DatatronTestImageViewer1
         public FloatingDialogue()
         {
             InitializeComponent();
+            
+
+            //newDti = imgV.getFilesArrayIndex(0);
+
+            //DTImageViewer newDti = new DTImageViewer();
+
         }
 
         private void FloatingDialogue_Load(object sender, EventArgs e)
@@ -42,10 +53,10 @@ namespace DatatronTestImageViewer1
         {
             string connString = ("SERVER=109.73.168.215;PORT=3306;database=robihari_datatron;UID=robihari_robi;PASSWORD=rUc!uZkqre$1;");
 
-
+            
             MySqlConnection conn = new MySqlConnection(connString);
            //String insertQuery = "INSERT INTO robihari_datatron.exportcsv(Image_Name,Payroll_ID,Surname,Forename,Job_Title,Department) VALUES ('0124.tif', '124', 'Davies', 'Cale', 'Engineer', 'Software');";
-            String insertQuery = "INSERT INTO robihari_datatron.exportcsv(Image_Name,Payroll_ID,Surname,Forename,Job_Title,Department) VALUES ('Test.TIF','"+ payroll_IDTextBox.Text + "','"+ surnameTextBox.Text+ "','"+ titleTextBox.Text + "','"+ titleTextBox.Text + "','"+groupTextBox.Text+"');";
+            String insertQuery = "INSERT INTO robihari_datatron.exportcsv(Image_Name,Payroll_ID,Surname,Forename,Job_Title,Department) VALUES ('newDti','"+ payroll_IDTextBox.Text + "','"+ surnameTextBox.Text+ "','"+ titleTextBox.Text + "','"+ titleTextBox.Text + "','"+groupTextBox.Text+"');";
             conn.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, conn);
             if (command.ExecuteNonQuery() == 1)
@@ -94,10 +105,19 @@ namespace DatatronTestImageViewer1
             //{
             //    DTImageViewer.IncCurrentIndex(1);
             //}
+
+
+
+
+
+
+
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
+            //try access object method from different class here
+
 
         }
 
@@ -203,6 +223,18 @@ namespace DatatronTestImageViewer1
 
         }
 
+        private void btnGetImgnm_Click(object sender, EventArgs e)
+        {
+            DTImageViewer getImgName = new DTImageViewer();
+            //ImageViewer getImgVName = new ImageViewer();
 
+
+
+            string imgN = "";
+            imgN = getImgName.getFilesArrayIndex(0);
+            txtbImgnm.Text = imgN;
+
+
+        }
     }
 }
