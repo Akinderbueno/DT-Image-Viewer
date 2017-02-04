@@ -55,7 +55,6 @@
             this.saveAsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.masterBranchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -156,8 +155,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem2,
-            this.toolStripMenuItem1,
-            this.masterBranchToolStripMenuItem});
+            this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
@@ -265,12 +263,6 @@
             this.splitter1.TabIndex = 9;
             this.splitter1.TabStop = false;
             // 
-            // masterBranchToolStripMenuItem
-            // 
-            this.masterBranchToolStripMenuItem.Name = "masterBranchToolStripMenuItem";
-            this.masterBranchToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
-            this.masterBranchToolStripMenuItem.Text = "Master Branch";
-            // 
             // DTImageViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,6 +314,5 @@
         private System.Windows.Forms.Button btnZoom;
         private System.Windows.Forms.Button btnZoomOut;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ToolStripMenuItem masterBranchToolStripMenuItem;
     }
 }

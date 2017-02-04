@@ -407,6 +407,11 @@ namespace DatatronTestImageViewer1
             dg.Show();
             
         }
+
+        private void masterBranchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
