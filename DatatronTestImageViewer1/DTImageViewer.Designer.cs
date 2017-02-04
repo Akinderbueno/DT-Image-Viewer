@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnZoomOut = new System.Windows.Forms.Button();
             this.btnZoom = new System.Windows.Forms.Button();
             this.txtbLength = new System.Windows.Forms.TextBox();
@@ -54,7 +55,7 @@
             this.saveAsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.button1 = new System.Windows.Forms.Button();
+            this.masterBranchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -71,6 +72,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(94, 655);
             this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(9, 106);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnZoomOut
             // 
@@ -145,7 +156,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem2,
-            this.toolStripMenuItem1});
+            this.toolStripMenuItem1,
+            this.masterBranchToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
@@ -194,14 +206,14 @@
             // imageViewerToolStripMenuItem
             // 
             this.imageViewerToolStripMenuItem.Name = "imageViewerToolStripMenuItem";
-            this.imageViewerToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.imageViewerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.imageViewerToolStripMenuItem.Text = "Image Viewer";
             this.imageViewerToolStripMenuItem.Click += new System.EventHandler(this.imageViewerToolStripMenuItem_Click);
             // 
             // floatingDToolStripMenuItem
             // 
             this.floatingDToolStripMenuItem.Name = "floatingDToolStripMenuItem";
-            this.floatingDToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.floatingDToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.floatingDToolStripMenuItem.Text = "Floating D";
             this.floatingDToolStripMenuItem.Click += new System.EventHandler(this.floatingDToolStripMenuItem_Click);
             // 
@@ -253,15 +265,11 @@
             this.splitter1.TabIndex = 9;
             this.splitter1.TabStop = false;
             // 
-            // button1
+            // masterBranchToolStripMenuItem
             // 
-            this.button1.Location = new System.Drawing.Point(9, 106);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.masterBranchToolStripMenuItem.Name = "masterBranchToolStripMenuItem";
+            this.masterBranchToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
+            this.masterBranchToolStripMenuItem.Text = "Master Branch";
             // 
             // DTImageViewer
             // 
@@ -314,5 +322,6 @@
         private System.Windows.Forms.Button btnZoom;
         private System.Windows.Forms.Button btnZoomOut;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem masterBranchToolStripMenuItem;
     }
 }
