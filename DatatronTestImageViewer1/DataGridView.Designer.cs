@@ -60,6 +60,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "DataGridView";
             this.Text = "DataGridView";
+            this.Load += new System.EventHandler(this.DataGridView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

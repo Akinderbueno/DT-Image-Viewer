@@ -68,5 +68,10 @@ namespace DatatronTestImageViewer1
             MySqlCommand command = conn.CreateCommand();
 
         }
+
+        private void DataGridView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
