@@ -18,25 +18,28 @@ namespace DatatronTestImageViewer1
 
         //Fields
 
-        //private DTImageViewer imageViewer1 = new DTImageViewer();
+        //public DTImageViewer DTI = new DTImageViewer();
+
+
+        //private var imageViewer1 = new DTImageViewer();
 
         //string newString = newDti.getFilesArrayIndex(0);
 
-         
 
 
 
+        //private DTImageViewer DTI = new DTImageViewer();
 
 
 
         public FloatingDialogue()
         {
             InitializeComponent();
-            
 
+            //this.DTI = DTIm;
             //newDti = imgV.getFilesArrayIndex(0);
 
-            //DTImageViewer newDti = new DTImageViewer();
+            //var newDti = new DTImageViewer();
 
         }
 
@@ -98,6 +101,7 @@ namespace DatatronTestImageViewer1
 
         }
 
+
         private void btnNxt_Click(object sender, EventArgs e)
         {
             ////DTImageViewer dtIV = new DTImageViewer();
@@ -107,6 +111,11 @@ namespace DatatronTestImageViewer1
             //}
 
 
+            var IV = new ImageViewer();
+            var DTI = new DTImageViewer();
+
+            IV.IncCurrentIndex(1);
+            DTI.updateIndexUI();
 
 
 
@@ -225,15 +234,23 @@ namespace DatatronTestImageViewer1
 
         private void btnGetImgnm_Click(object sender, EventArgs e)
         {
-            DTImageViewer getImgName = new DTImageViewer();
-            //ImageViewer getImgVName = new ImageViewer();
+            //var glo = new GlobalV();
+            var getImgVName = new DTImageViewer();
 
 
 
             string imgN = "";
-            imgN = getImgName.getFilesArrayIndex(0);
+            //imgN = DTI.filesArray[1];
+            //imgN = DTImageViewer.Globals.getFilesArrayIndex;
             txtbImgnm.Text = imgN;
 
+           // txtbImgnm.Text = getImgVName.testVal;
+
+
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
 
         }
     }

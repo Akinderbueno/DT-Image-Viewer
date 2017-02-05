@@ -119,6 +119,7 @@
             this.btnPrevious.TabIndex = 11;
             this.btnPrevious.Text = "Previous";
             this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // payroll_IDTextBox
             // 

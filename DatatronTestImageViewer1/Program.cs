@@ -16,7 +16,9 @@ namespace DatatronTestImageViewer1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DTImageViewer());
+            DTImageViewer DTI = new DTImageViewer();
+            DTI.Text = "Datatron 2017";
+            Application.Run(DTI);
         }
     }
 }

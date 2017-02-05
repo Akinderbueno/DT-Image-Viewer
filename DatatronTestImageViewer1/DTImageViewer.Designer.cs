@@ -307,8 +307,8 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem imageViewerToolStripMenuItem;
         private System.Windows.Forms.Label lblImage;
-        private System.Windows.Forms.TextBox txtbCurrent;
-        private System.Windows.Forms.TextBox txtbLength;
+        public System.Windows.Forms.TextBox txtbCurrent;
+        public System.Windows.Forms.TextBox txtbLength;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.ToolStripMenuItem floatingDToolStripMenuItem;
         private System.Windows.Forms.Button btnZoom;

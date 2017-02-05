@@ -14,11 +14,19 @@ namespace DatatronTestImageViewer1
 
     public partial class DTImageViewer : Form
     {
-
+        //Fields --------------------------------------
+        public int CURRENT_INDEX;
+        public string[] filesArray;
+        public ImageViewer imgV = new ImageViewer();
+        FloatingDialogue flDiag = new FloatingDialogue();
+        public GlobalV Globals = new GlobalV();
+        public string testVal = "String Passed";
 
         public DTImageViewer()
         {
             InitializeComponent();
+
+
            
         }
 
@@ -29,11 +37,9 @@ namespace DatatronTestImageViewer1
         }
 
 
-        //Fields --------------------------------------
-        private int CURRENT_INDEX;
-        private string[] filesArray;
-        public ImageViewer imgV = new ImageViewer();
-        FloatingDialogue flDiag = new FloatingDialogue();
+       
+
+        
 
         //---------------------------------------------
 
@@ -109,29 +115,49 @@ namespace DatatronTestImageViewer1
 
 
 
-
-            if (ofd.ShowDialog() == DialogResult.OK && ofd.FileName.Length > 0)
+            try
             {
-                //Creates an array of imported file Names. Call index with string[x]
-                setFilesArray(ofd.FileNames);
+                if (ofd.ShowDialog() == DialogResult.OK && ofd.FileName.Length > 0)
+                {
+                    //Creates an array of imported file Names. Call index with string[x]
+                    imgV.setFilesArray(ofd.FileNames);
 
-                //GlobalV.setFilesArray(ofd.FileNames);
+                    //filesArray[1] = "TEST.TIF";
 
-                string[] filesCopy = getFilesArray();
 
-                imgV.picImageViewer.SizeMode = PictureBoxSizeMode.Zoom;
 
-                setCurrentIndex(0);
+                    string[] filesCopy = imgV.getFilesArray();
+                    //Globals.setFilesArray(filesCopy);
 
-                //sets the current image to the index of the filesCopy array
-                Image currentImage = Image.FromFile(filesCopy[getCurrentIndex()]);
+                    //for (int a = 0; a < ofd.FileNames.Length; a = a + 1)
+                    //{
+                    //    MessageBox.Show(Globals.getFilesArrayIndex(a));
 
-                //set image viewer to current image index
-                imgV.picImageViewer.Image = currentImage;
-                
-                updateIndexUI();
-                    
+
+
+                    //    //GlobalV.setFilesArray(ofd.FileNames);
+                    //}
+
+                    imgV.picImageViewer.SizeMode = PictureBoxSizeMode.Zoom;
+
+                    imgV.setCurrentIndex(0);
+
+                    //sets the current image to the index of the filesCopy array
+                    Image currentImage = Image.FromFile(filesCopy[getCurrentIndex()]);
+
+                    //set image viewer to current image index
+                    imgV.picImageViewer.Image = currentImage;
+
+                    updateIndexUI();
+                   
+                }
             }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("nullReferenceException");
+            }
+
+
 
         }
 
@@ -139,10 +165,10 @@ namespace DatatronTestImageViewer1
         public void IncCurrentIndex(int step)
         {
 
-            if (getCurrentIndex() >= 0 && getCurrentIndex() < ((getFilesArray().Length) - 1))
+            if (imgV.getCurrentIndex() >= 0 && imgV.getCurrentIndex() < ((imgV.getFilesArray().Length) - 1))
             {
-                setCurrentIndex((getCurrentIndex() + step));
-                setImage(getCurrentIndex());
+                imgV.setCurrentIndex((imgV.getCurrentIndex() + step));
+                setImage(imgV.getCurrentIndex());
 
                 //lblimgno.Text = "Index: " + getCurrentIndex();
 
@@ -156,10 +182,10 @@ namespace DatatronTestImageViewer1
         public void DecCurrentIndex(int step)
         {
 
-            if (getCurrentIndex() > 0 && getCurrentIndex() <= ((getFilesArray().Length) - 1))
+            if (imgV.getCurrentIndex() > 0 && imgV.getCurrentIndex() <= ((imgV.getFilesArray().Length) - 1))
             {
-                setCurrentIndex((getCurrentIndex() - step));
-                setImage(getCurrentIndex());
+                imgV.setCurrentIndex((imgV.getCurrentIndex() - step));
+                setImage(imgV.getCurrentIndex());
 
 
                 //lblimgno.Text = "Index: " + getCurrentIndex();
@@ -176,44 +202,48 @@ namespace DatatronTestImageViewer1
 
             //change textbox valies
             //first
-            txtbCurrent.Text = ("" + getFileNo());
+            txtbCurrent.Text = ("" + imgV.getFileNo());
 
             //last textbox
 
-            txtbLength.Text = ("" + getFilesArray().Length);
+            txtbLength.Text = ("" + imgV.getFilesArray().Length);
 
 
         }
         //SetImage
         public void setImage(int index)
         {
-            imgV.picImageViewer.Image = Image.FromFile(getFilesArrayIndex(index));
+            imgV.picImageViewer.Image = Image.FromFile(imgV.getFilesArrayIndex(index));
             //MessageBox.Show("gets image");
         }
         //ChangeImageValue(with txtbox)
         public void changedImageValue()
         {
+            //MessageBox.Show(""+imgV.getFilesArray().Length);
+
             try
             {
-                if (txtbCurrent.Text != "" & getFilesArrayIndex(0) != "")
+                if (txtbCurrent.Text != "" & imgV.getFilesArrayIndex(2) != "")
                 {
 
                     try
                     {
                         int value = Int32.Parse(txtbCurrent.Text);
                         int index = value - 1;
-                        
-                        if (value > 0 && value <= getFilesArray().Length && getFilesArray().Length > 0)
+                       
+                        if (value > 0 && value <= imgV.getFilesArray().Length && imgV.getFilesArray().Length > 0)
                         {
-                            setImage(index);
-                            setCurrentIndex(index);
                             
+                            setImage(index);
+                            
+                            imgV.setCurrentIndex(index);
+                           
                         }
                     }
 
                     catch (FormatException)
                     {
-                        //MessageBox.Show("catch FormatException");
+                        MessageBox.Show("ChangedImageValue: catch FormatException");
                     }
                 }
 
@@ -221,7 +251,7 @@ namespace DatatronTestImageViewer1
             }
             catch (NullReferenceException)
             {
-                MessageBox.Show("catch NullReference");
+                MessageBox.Show("OutsideChangedIMVal: catch NullReference");
             }
         }
 
@@ -289,7 +319,7 @@ namespace DatatronTestImageViewer1
         private void ImageViewer_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true; // this cancels the close event.
-            this.Hide();
+            imgV.Hide();
             MessageBox.Show("hidden");
         }
 
@@ -298,7 +328,7 @@ namespace DatatronTestImageViewer1
         //Zoom Functions
         public void ZoomIn(Int32 ZoomValue)
         {
-            if (getCurrentIndex().Equals(null))
+            if (imgV.getCurrentIndex().Equals(null))
             {
                 MessageBox.Show("null image");
 

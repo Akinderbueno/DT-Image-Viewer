@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
     public class GlobalV
     {
+      
+        
 
         private string[] filesArrayC;
-
 
 
 
