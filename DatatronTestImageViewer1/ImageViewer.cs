@@ -70,7 +70,7 @@ namespace DatatronTestImageViewer1
         {
             MessageBox.Show(getFilesArrayIndex(0));
 
-            if (getCurrentIndex() >= 0 && getCurrentIndex() < ((getFilesArray().Length) - 1))
+            if (GlobalV.getCurrentIndex() >= 0 && GlobalV.getCurrentIndex() < ((getFilesArray().Length) - 1))
             {
                 setCurrentIndex((getCurrentIndex() + step));
                 setImage(getCurrentIndex());
@@ -99,6 +99,10 @@ namespace DatatronTestImageViewer1
 
 
         }
+
+
+
+
 
 
         //SetImage

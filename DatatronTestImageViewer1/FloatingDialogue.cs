@@ -54,43 +54,41 @@ namespace DatatronTestImageViewer1
         //Next and Save button 
         private void btnNextSave_Click(object sender, EventArgs e)
         {
+
+
+           
+
+            AddToDatabase();
+
+
+        }
+  
+
+        public void AddToDatabase()
+        {
+
             string connString = ("SERVER=109.73.168.215;PORT=3306;database=robihari_datatron;UID=robihari_robi;PASSWORD=rUc!uZkqre$1;");
 
-            
+
             MySqlConnection conn = new MySqlConnection(connString);
-           //String insertQuery = "INSERT INTO robihari_datatron.exportcsv(Image_Name,Payroll_ID,Surname,Forename,Job_Title,Department) VALUES ('0124.tif', '124', 'Davies', 'Cale', 'Engineer', 'Software');";
-            String insertQuery = "INSERT INTO robihari_datatron.exportcsv(Image_Name,Payroll_ID,Surname,Forename,Job_Title,Department) VALUES ('newDti','"+ payroll_IDTextBox.Text + "','"+ surnameTextBox.Text+ "','"+ titleTextBox.Text + "','"+ titleTextBox.Text + "','"+groupTextBox.Text+"');";
+            //String insertQuery = "INSERT INTO robihari_datatron.exportcsv(Image_Name,Payroll_ID,Surname,Forename,Job_Title,Department) VALUES ('0124.tif', '124', 'Davies', 'Cale', 'Engineer', 'Software');";
+            String insertQuery = "INSERT INTO robihari_datatron.exportcsv(Image_Name,Payroll_ID,Surname,Forename,Job_Title,Department) VALUES ('newDti','" + payroll_IDTextBox.Text + "','" + surnameTextBox.Text + "','" + titleTextBox.Text + "','" + titleTextBox.Text + "','" + groupTextBox.Text + "');";
             conn.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, conn);
             if (command.ExecuteNonQuery() == 1)
             {
                 MessageBox.Show("Data Inserted");
-            } else
+            }
+            else
             {
                 MessageBox.Show("Data NOT Inserted");
             }
 
 
             conn.Close();
-        }
 
-
-
-
-
-        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("l");
-        }
-
-        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
-        {
 
         }
-
-
-
-
 
 
         public void SaveToCSV()
@@ -111,11 +109,11 @@ namespace DatatronTestImageViewer1
             //}
 
 
-            var IV = new ImageViewer();
-            var DTI = new DTImageViewer();
+            //var IV = new ImageViewer();
+            //var DTI = new DTImageViewer();
 
-            IV.IncCurrentIndex(1);
-            DTI.updateIndexUI();
+            //IV.IncCurrentIndex(1);
+            //DTI.updateIndexUI();
 
 
 
@@ -235,13 +233,13 @@ namespace DatatronTestImageViewer1
         private void btnGetImgnm_Click(object sender, EventArgs e)
         {
             //var glo = new GlobalV();
-            var getImgVName = new DTImageViewer();
-
-
+            //var getImgVName = DTI;
+           
 
             string imgN = "";
-            //imgN = DTI.filesArray[1];
-            //imgN = DTImageViewer.Globals.getFilesArrayIndex;
+            int currentIndex = GlobalV.getCurrentIndex();
+           
+            imgN = GlobalV.getFilesArrayIndex(currentIndex);
             txtbImgnm.Text = imgN;
 
            // txtbImgnm.Text = getImgVName.testVal;
@@ -251,7 +249,7 @@ namespace DatatronTestImageViewer1
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

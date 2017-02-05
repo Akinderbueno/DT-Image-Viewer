@@ -10,28 +10,56 @@ using System.Threading.Tasks;
       
         
 
-        private string[] filesArrayC;
-
-
+        private static string[] filesArrayC;
+        private static int CURRENT_INDEX;
 
         //Get files array
-        public string[] getFilesArray()
+        public static string[] getFilesArray()
         {
-            return this.filesArrayC;
+            return filesArrayC;
         }
 
-        public string getFilesArrayIndex(int index)
+        public static string getFilesArrayIndex(int index)
         {
-            return this.filesArrayC[index];
+            return filesArrayC[index];
 
         }
 
         //Set files array
-        public void setFilesArray(string[] filesArray)
+        public static void setFilesArray(string[] filesArray)
         {
-            this.filesArrayC = filesArray;
+            filesArrayC = filesArray;
         }
 
 
-    }
+
+        //Get Current Index
+        public static int getCurrentIndex()
+        {
+            return CURRENT_INDEX;
+
+        }
+
+        //Set Current Index
+        public static void setCurrentIndex(int currentIndex)
+        {
+            CURRENT_INDEX = currentIndex;
+
+        }
+
+        //get Files No
+        public static string getFileNo()
+        {
+            return ("" + (getCurrentIndex() + 1));
+        }
+
+
+
+
+
+
+
+
+
+}
 

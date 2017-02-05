@@ -55,12 +55,15 @@
             this.saveAsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.splitter1 = new System.Windows.Forms.Splitter();
+            this.btnPrev = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnPrev);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnZoomOut);
             this.panel1.Controls.Add(this.btnZoom);
@@ -78,7 +81,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 11;
-            this.button1.Text = "button1";
+            this.button1.Text = "DataGrid";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -204,14 +207,14 @@
             // imageViewerToolStripMenuItem
             // 
             this.imageViewerToolStripMenuItem.Name = "imageViewerToolStripMenuItem";
-            this.imageViewerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.imageViewerToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.imageViewerToolStripMenuItem.Text = "Image Viewer";
             this.imageViewerToolStripMenuItem.Click += new System.EventHandler(this.imageViewerToolStripMenuItem_Click);
             // 
             // floatingDToolStripMenuItem
             // 
             this.floatingDToolStripMenuItem.Name = "floatingDToolStripMenuItem";
-            this.floatingDToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.floatingDToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.floatingDToolStripMenuItem.Text = "Floating D";
             this.floatingDToolStripMenuItem.Click += new System.EventHandler(this.floatingDToolStripMenuItem_Click);
             // 
@@ -263,11 +266,32 @@
             this.splitter1.TabIndex = 9;
             this.splitter1.TabStop = false;
             // 
+            // btnPrev
+            // 
+            this.btnPrev.Location = new System.Drawing.Point(10, 136);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.Size = new System.Drawing.Size(27, 23);
+            this.btnPrev.TabIndex = 12;
+            this.btnPrev.Text = "<";
+            this.btnPrev.UseVisualStyleBackColor = true;
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(60, 163);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(27, 23);
+            this.btnNext.TabIndex = 13;
+            this.btnNext.Text = ">";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
             // DTImageViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 682);
+            this.Controls.Add(this.btnNext);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.menuStrip1);
@@ -314,5 +338,7 @@
         private System.Windows.Forms.Button btnZoom;
         private System.Windows.Forms.Button btnZoomOut;
         private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button btnPrev;
+        public System.Windows.Forms.Button btnNext;
     }
 }
